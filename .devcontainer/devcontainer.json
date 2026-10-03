@@ -1,0 +1,22 @@
+{
+  "name": "Windows 11 VM",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [8006, 3389],
+  "portsAttributes": {
+    "8006": {
+      "label": "Windows 11 Web Desktop",
+      "onAutoForward": "openBrowser"
+    },
+    "3389": {
+      "label": "Windows 11 RDP"
+    }
+  },
+  "postCreateCommand": "bash run.sh"
+}
